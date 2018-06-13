@@ -275,7 +275,7 @@ where $L_{u}(N)$ is the recommendation list up to the N-th element and $TS_{u}^{
 
 In the following plot we can see how much increase in precision we can obtain with more epochs. Be aware that training with many epochs beyond necessary would not be the best option, because you may fit well training data but you may lose generalization capacity on test test. To find the optimal number of epochs you have to use a validation set and check for each epoch the loss on the that set. When loss on validation set begin to increase, you can stop the training at that epoch.
 
-![Plot](/assets/tfautorec.png)
+![Plot](/assets/2018-01-03/tfautorec.png)
 
 To evaluate the recommendation I suggest to use an open source library called [RankSys](https://github.com/RankSys/RankSys), written in Java, it's really fast and it implements many ranking metrics.
 
