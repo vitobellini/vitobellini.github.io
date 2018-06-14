@@ -4,8 +4,6 @@ title: Publications
 permalink: /publications/
 ---
 
-test
-
 # 2017
 
 - **Auto-encoding user ratings via knowledge graphs in recommendation scenarios**
