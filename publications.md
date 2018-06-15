@@ -11,7 +11,7 @@ permalink: /publications/
   <br>_ACM International Conference Proceeding Series 2017_
 
 - **An analysis on time- & session-Aware diversification in recommender systems**
- <br>*Anelli, V.W., **Bellini, V.**, Di Noia, T., La Bruna, W., Tomeo, P., and Di Sciascio, E.
+ <br>Anelli, V.W., **Bellini, V.**, Di Noia, T., La Bruna, W., Tomeo, P., and Di Sciascio, E.
  <br>_UMAP 2017 - Proceedings of the 25th Conference on User Modeling, Adaptation and Personalization 2017_
  
 - **Querying DeepWeb Data Sources as Linked Data**
