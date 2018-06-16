@@ -1,7 +1,7 @@
 ---
 layout: page
 title: SEMAUTO
-permalink: /publications/semauto
+permalink: /pubs/semauto
 ---
 
 SemAuto
