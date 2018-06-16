@@ -4,6 +4,12 @@ title: Publications
 permalink: /publications/
 ---
 
+# 2018
+
+- **Reflective internet of things middleware-enabled a predictive real-time waste monitoring system**
+  <br>**Bellini, V.**, Di Noia, T., Mongiello, M., Nocera, F., Parchitelli, A., and Di Sciascio, E.
+  <br>_ICWE 2018 - Proceedings of the 18th International Conference on Web Engineering_
+  
 # 2017
 
 - **Auto-encoding user ratings via knowledge graphs in recommendation scenarios**
