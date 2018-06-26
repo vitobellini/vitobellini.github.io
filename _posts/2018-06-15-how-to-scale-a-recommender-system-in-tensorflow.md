@@ -93,7 +93,7 @@ def model_loss(y_hat, y):
 
 ### Towers
 
-The following function computes the loss for a tower by using the function _model__loss_ and adds the current tower's loss to the collection "losses". This collection contains all the losses from the current tower, it's an helper collection which helps us to compute the total loss efficiently by using the element-wise summation tf.add_n.
+The following function computes the loss for a tower by using the function _model_loss_ and adds the current tower's loss to the collection "losses". This collection contains all the losses from the current tower, it's an helper collection which helps us to compute the total loss efficiently by using the element-wise summation tf.add_n.
 
 {% highlight python %}
 def tower_loss(scope, inputs, y):
