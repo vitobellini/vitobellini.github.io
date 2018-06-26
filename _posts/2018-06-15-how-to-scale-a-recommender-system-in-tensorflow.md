@@ -265,3 +265,8 @@ with tf.device("/cpu:0"):
 
 ## Conclusions
 
+| GPUs | Time | Loss |
+|-------|--------|---------|
+| 1 | 0 | 0 |
+| 2 | 0 | 0 |
+| 4 | 0 | 0 |
