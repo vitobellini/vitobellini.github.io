@@ -265,8 +265,10 @@ with tf.device("/cpu:0"):
 
 ## Conclusions
 
+In the following table are shown the results in terms of time and final loss of the same model deployed on different number of GPUs. Be aware that when a single GPU is used, the tower model is not used.
+
 | GPUs | Time | Loss |
 |-------|--------|---------|
-| 1 | 0 | 0 |
-| 2 | 0 | 0 |
-| 4 | 0 | 0 |
+| 1 | 28.1290848255 | 0.0158106584 |
+| 2 | 9.3567585945 | 6.9538128376 |
+| 4 | 0.6129291654 | 0.6088444591 |
