@@ -3,7 +3,7 @@ layout: post
 title:  "How to scale a Recommender System in TensorFlow"
 date:   2018-06-26 15:30:00 +0200
 categories: posts
-published: false
+published: true
 ---
 
 ## Introduction
@@ -266,10 +266,11 @@ with tf.device("/cpu:0"):
 
 ## Conclusions
 
-In the following table are shown the results in terms of time and final loss of the same model deployed on different number of GPUs. Be aware that when a single GPU is used, the tower model is not used.
+In the following table are shown the results in terms of time and final loss of the same model deployed on different number of GPUs. The model is trained for 10000 with a learning rate of 0.03 and batch size of 250 using the RMSProp optimizer. As concerns about the hardware, the model has been trained using GeForce GTX 970 GPUs.
 
 | GPUs | Time | Loss |
 |-------|--------|---------|
-| 1 | 28.1290848255 | 0.0158106584 |
-| 2 | 9.3567585945 | 6.9538128376 |
-| 4 | 0.6129291654 | 0.6088444591 |
+| 1 | 857.7444069385529 | 0.02808666229248047 |
+| 2 | 562.5094940662384 | 0.028311876580119133 |
+| 3 | 384.3871910572052 | 0.026195280253887177 |
+| 4 | 263.5561637878418 | 0.02583944983780384 |
