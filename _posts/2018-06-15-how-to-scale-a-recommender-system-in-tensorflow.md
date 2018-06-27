@@ -8,22 +8,20 @@ published: true
 
 ## Introduction
 
-Nowadays, we are in the era of the Big Data, therefore dealing with very huge quantity of data shouldn't be frightening anymore. Even if the available data is not huge, scaling up comes in handy because it reduces computational time for our experiments: being able to conduct an experiment in less time means that we can conduct more experiments.
+Nowadays, we are in the era of the Big Data, therefore we deal with very huge quantity of data which shouldn't be frightening anymore. Even if the available data is not huge, scaling up comes in handy because it reduces computational time for our experiments: being able to conduct an experiment in less time means that we can conduct more experiments.
 
-Mainly two kind of scale techniques exists: vertical and horizontal scaling.
-The former means that the computational costs are splitted across different GPUs on the same host, tipically there's an upper bound for the scale factor. The latter means that costs are splitted across several devices without any upper bound at all.
+Mainly two kind of scale techniques exist: vertical and horizontal scaling. The former means that computational costs are splitted across different GPUs on the same host; tipically there's an upper bound for the scaling factor. The latter means that costs are splitted across several devices without any upper bound at all.
 
 In this post we will learn how to scale vertically a Recommender System on multiple GPUs, which extends the post about [How to build a Recommender System in TensorFlow]({{ site.baseurl }}{% post_url 2018-01-03-how-to-build-a-recommender-system-in-tensorflow %}).
 
 
 ## Tutorial
 
-As shown in a previous post, we will build an Autoencoder Neural Network for collaborative filtering, but now we are training it on multiple GPUs simultaneously.
+As shown in the previous post, we will build an Autoencoder Neural Network for collaborative filtering, but now we are training it on multiple GPUs simultaneously.
 
 ### Background
 
-First of all, it's necessary to spend some words about how to distribuite the model on GPUs in TensorFlow. Given the computational graph, it has to be replicated on every GPU in order to be executed simultaneously on different devices. This abstraction is called *tower*. More generally we refer as a tower by a function for computing inference and gradients for a single model replica.
-Here, the basic rationale behind the concept of replicating the model is that training data can be splitted across GPUs and every tower will compute its gradient, finally those gradients can be combined into a single by averaging them.
+First of all, it's necessary to spend some words about how to distribute the model on GPUs in TensorFlow. Given the computational graph, it has to be replicated on every GPU in order to be executed simultaneously on different devices. This abstraction is called tower. More generally, by using tower we refer to a function for computing inference and gradients for a single model replica. Here, the basic rationale behind the concept of replicating the model is that training data can be splitted across GPUs and every tower will compute its gradient; finally, those gradients can be combined into a single one by averaging them.
 
 ### Model definition
 
@@ -94,7 +92,7 @@ def model_loss(y_hat, y):
 
 ### Towers
 
-The following function computes the loss for a tower by using the function _model_loss_ and adds the current tower's loss to the collection "losses". This collection contains all the losses from the current tower, it's an helper collection which helps us to compute the total loss efficiently by using the element-wise summation tf.add_n.
+The following function computes the loss for a tower by using the function _model_loss_ and adds the current tower's loss to the collection "losses". This collection contains all the losses from the current tower and helps us to compute the total loss efficiently by using the element-wise summation tf.add_n.
 
 {% highlight python %}
 def tower_loss(scope, inputs, y):
@@ -133,7 +131,7 @@ def tower_loss(scope, inputs, y):
 
 ### Averaging gradients
 
-Every GPU has its own replica of the model with its batch of data, therefore gradients on GPUs are different from each others because of different data they are computed with. It is possible to obtain an approximation of the gradient as it were runned on a single GPU by computing an average of the gradients.
+Every GPU has its own replica of the model with its batch of data, therefore gradients on GPUs are different from each others because of different data they are computed with. It is possible to obtain an approximation of the gradient as it were run on a single GPU by computing an average of the gradients.
 
 {% highlight python %}
 def average_gradients(tower_grads):
@@ -274,3 +272,5 @@ In the following table are shown the results in terms of time and final loss of 
 | 2 | 562.5094940662384 | 0.028311876580119133 |
 | 3 | 384.3871910572052 | 0.026195280253887177 |
 | 4 | 263.5561637878418 | 0.02583944983780384 |
+
+As we can see from the table, we can reduce the total training time using more GPUs achieving the same results.
