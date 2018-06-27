@@ -274,3 +274,7 @@ In the following table are shown the results in terms of time and final loss of 
 | 4 | 263.5561637878418 | 0.02583944983780384 |
 
 As we can see from the table, we can reduce the total training time using more GPUs achieving the same results.
+
+## Code
+
+Code available at [tfautorec](https://github.com/vitobellini/tfautorec/).

@@ -285,4 +285,8 @@ You are now able to build a recommender system with the same performances of oth
 
 You can play with network settings such as hidden layers' dimension as see how system's performances change. Generally, their dimension depends on the complexity of the function you want to approximate. If your hidden layers are too big, you may experience overfitting and your model will lose the capacity to generalize well on test set. On the contrary, if they are too small, the neural network would not have enough parameters to fit well the data. You may also want to improve performances trying some regularization techniques like dropout.
 
+## Code
+
+Code available at [tfautorec](https://github.com/vitobellini/tfautorec/).
+
 {% include mathjax.html %}
