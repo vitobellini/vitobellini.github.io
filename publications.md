@@ -9,6 +9,10 @@ permalink: /publications/
 - **Reflective internet of things middleware-enabled a predictive real-time waste monitoring system**
   <br>**Bellini, V.**, Di Noia, T., Mongiello, M., Nocera, F., Parchitelli, A., and Di Sciascio, E.
   <br>_ICWE 2018 - Proceedings of the 18th International Conference on Web Engineering_
+
+- **Exploiting Knowledge Graphs for Auto-Encoding User Ratings in Recommender Systems**
+  <br>**Bellini, V.**, Di Noia, T., Di Sciascio, E. and Schiavone, A.
+  <br>_IIR 2018 - 9th Italian Information Retrieval Workshop_
   
 # 2017
 
