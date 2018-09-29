@@ -49,5 +49,13 @@ $$
 
 Said that, during the feed forward and backpropagation steps, we multiply weight matrices with the mask M because we want to prevent both inputs and errors to propagate through unconnected features in the hidden layer.
 
+Therefore we compute neurons' value for hidden and output layer as:
+
+$$
+h =  g(X \times (W_1 \circ M))
+\\
+o = g(h \times (W_2 \circ M^T))
+$$
+
 {% include mathjax.html %}
 
