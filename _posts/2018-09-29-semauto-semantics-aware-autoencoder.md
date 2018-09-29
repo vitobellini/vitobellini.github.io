@@ -70,7 +70,11 @@ Now that we have users' profile, we can provide them a top-N recommendation list
 The simplest method to predict a score for each unrated item would be a summation of features that belong to the item by using the weights in her user profile.
 
 ### User-kNN
-Another approach consists in leveraging a VSM model in which to project our users' vector in order to find for every user, her most K similar ones in order to infer missing ratings by applying a user-kNN. 
+Another approach consists in leveraging a VSM model in which to project our users' vector in order to find for every user, her most K similar ones in order to infer missing ratings by applying a user-kNN. For each user _u_ we find the top-k similar neighbors to infer the rate _r_ for the item _i_ as the weighted average rate that the neighborhood gave to it:
+
+$$
+r(u, i) = \frac{\sum_{j=1}^{k} sim(u, v_{j}) \cdot r(v_j, i)}{\sum_{j=1}^{k} sim(u, v_{j})}
+$$
 
 ## Explanation
 Having a recommendation model which is also interpretable leads to an easy way to provide an explanation to the users. In this case, we can explain the recommended items by using the top features that give the major contribute in the ranking of that item.
