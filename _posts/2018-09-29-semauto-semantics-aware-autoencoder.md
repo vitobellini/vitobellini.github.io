@@ -8,7 +8,7 @@ published: false
 
 ## Introduction
 
-Artificial Neural Networks are very powerful model that can obtain an high discrimination power but the price you pay for better accuracy is the lack of interpretability. Thats the reason why they are called black-boxes; they just work but you cannot understand how they compute the predictions. Neural Networks can approximate any kind of function but the study of their structure won't give us any insight about the function being approximated, because there is no simple link between the weights and the function to approximate.
+Artificial Neural Networks are very powerful model that can obtain an high discrimination power but the price you pay for better accuracy is the lack of interpretability. That's the reason why they are called black-boxes; they just work but you cannot understand how they compute the predictions. Neural Networks can approximate any kind of function but the study of their structure won't give us any insight about the function being approximated, because there is no simple link between the weights and the function to approximate.
 
 ### Idea
 
