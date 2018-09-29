@@ -24,7 +24,7 @@ Therefore, a not fully connected architecture based on an autoencoder model come
 
 Autoencoders are capable of encoding a latent representation of their input data within the hidden layer and they exploit it to reconstruct the original input data at the output layer. In this case, we have a not fully connected architecture that allows us to assign an explicit meaning to the hidden neurons. This means that at the end of training, an explicit representation of the input data within the feature space is encoded in the hidden layer.
 
-### Feed Forward and Backpropagation
+## Feed Forward and Backpropagation
 
 In order to train a neural network which results to be no more fully connected, it's necessary to modify the feed forward and backpropagation algorithms because we want user ratings to propagate only through attributes that belong to rated items.
 
@@ -57,9 +57,25 @@ h =  g(X \times (W_1 \circ M))
 o = g(h \times (W_2 \circ M^T))
 $$
 
-### User Profile
+## User Profile
 
 Finally, by training one autoencoder per user, it's possible to reconstruct her user ratings starting from an explicit representation of them in terms of features instead of latent factors. Hence, the user profile can be built by by extracting values encoded in the hidden layer, where each neuron corresponds to an explicit feature.
+
+
+## Recommendations
+
+Now that we have users' profile, we can provide them a top-N recommendation list.
+
+### Features summation
+The simplest method to predict a score for each unrated item would be a summation of features that belong to the item by using the weights in her user profile.
+
+### User-kNN
+Another approach consists in leveraging a VSM model in which to project our users' vector in order to find for every user, her most K similar ones in order to infer missing ratings by applying a user-kNN. 
+
+### References
+- **Auto-encoding user ratings via knowledge graphs in recommendation scenarios**
+  <br>**Bellini, V.**, Anelli, V.W., Di Noia, T., and Di Sciascio, E.
+  <br>_ACM International Conference Proceeding Series 2017_
 
 {% include mathjax.html %}
 
