@@ -20,6 +20,6 @@ If it could be possible to label every neuron in hidden layers and force the neu
 
 Therefore, we came up with a not fully connected architecture based on an autoencoder model, in which input and output neurons that represent all the items in the catalog are connected only with those neurons that represent items’ attributes related to them.
 
-![Plot](/assets/2018-09-29/semauto.png)
+![SEMAUTO](/assets/2018-09-29/semauto.png)
 
 Autoencoders are capable of encoding a latent representation of their input data within the hidden layer and they exploit it to reconstruct the original input data at the output layer. In our case, we have a not fully connected architecture that allows us to assign an explicit meaning to the hidden neurons. This means that at the end of training, we have encoded an explicit representation of the input data in the feature space.
