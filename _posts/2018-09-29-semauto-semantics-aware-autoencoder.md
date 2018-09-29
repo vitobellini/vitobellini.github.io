@@ -18,11 +18,11 @@ Users, on the other hand, would like to know why a certain item has been recomme
 
 If it could be possible to label every neuron in hidden layers and force the neural network to be aware of the hidden nodes meaning, we could address the problem of deep learning models interpretability. In a recommendation scenario, if we think at an autoencoder, usually we have input and output units representing items while hidden units encode a latent representation of users' ratings once the model has been trained. What if we find a way to replace a latent representation of user ratings with items' attributes and force the gradient to flow only through those attributes that belong to items?
 
-Therefore, we came up with a not fully connected architecture based on an autoencoder model, in which input and output neurons that represent all the items in the catalog are connected only with those neurons that represent items’ attributes related to them.
+Therefore, a not fully connected architecture based on an autoencoder model comes in handy. In this model, input and output neurons that represent all the items in the catalog are connected only with those neurons that represent items’ attributes related to them.
 
 ![SEMAUTO](/assets/2018-09-29/semauto.png)
 
-Autoencoders are capable of encoding a latent representation of their input data within the hidden layer and they exploit it to reconstruct the original input data at the output layer. In this case, we have a not fully connected architecture that allows us to assign an explicit meaning to the hidden neurons. This means that at the end of training, we have encoded an explicit representation of the input data in the feature space.
+Autoencoders are capable of encoding a latent representation of their input data within the hidden layer and they exploit it to reconstruct the original input data at the output layer. In this case, we have a not fully connected architecture that allows us to assign an explicit meaning to the hidden neurons. This means that at the end of training, an explicit representation of the input data within the feature space is encoded in the hidden layer.
 
 ### Feed Forward and Backpropagation
 
@@ -37,7 +37,7 @@ a_{m,1} & a_{m,2} & \cdots & a_{m,n}
 \end{pmatrix}
 $$
 
-M is an adjacency matrix where rows and columns represent respectively items and features. Each entry of this matrix is a binary value that indicate whether a feature 𝑗 belong to the item 𝑖.
+M is an adjacency matrix where rows and columns represent respectively items and features. Each entry of this matrix is a binary value that indicate whether a feature _j_ belong to the item _i_.
 
 $$
 a_{i,j} \in M_{m,n} = 
@@ -47,7 +47,7 @@ a_{i,j} \in M_{m,n} =
 \end{dcases}
 $$
 
-During the feed forward and backpropagation steps, we need to multiply weight matrices with the mask M because we want to prevent both inputs and errors to propagate through unconnected features in the hidden layer.
+During the feed forward and backpropagation steps, a matrix multiplication between the weight matrices and the mask M it is needed to prevent both inputs and errors to propagate through unconnected features in the hidden layer.
 
 Therefore it is possible to compute neurons' value for hidden and output layer as:
 
