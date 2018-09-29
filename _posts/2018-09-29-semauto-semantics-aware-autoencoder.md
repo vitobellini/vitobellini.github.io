@@ -72,7 +72,10 @@ The simplest method to predict a score for each unrated item would be a summatio
 ### User-kNN
 Another approach consists in leveraging a VSM model in which to project our users' vector in order to find for every user, her most K similar ones in order to infer missing ratings by applying a user-kNN. 
 
-### References
+## Explanation
+Having a recommendation model which is also interpretable leads to an easy way to provide an explanation to the users. In this case, we can explain the recommended items by using the top features that give the major contribute in the ranking of that item.
+
+## References
 - **Auto-encoding user ratings via knowledge graphs in recommendation scenarios**
   <br>**Bellini, V.**, Anelli, V.W., Di Noia, T., and Di Sciascio, E.
   <br>_ACM International Conference Proceeding Series 2017_
