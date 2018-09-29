@@ -41,10 +41,10 @@ M is an adjacency matrix where rows and columns represent respectively items and
 
 $$
 a_{i,j} \in M_{m,n} = 
-\begin{dcases}
+\begin{cases}
 1,& \text{if  item } i  \text{ is connected to feature } j\\
 0,              & \text{otherwise}
-\end{dcases}
+\end{cases}
 $$
 
 During the feed forward and backpropagation steps, a matrix multiplication between the weight matrices and the mask M it is needed to prevent both inputs and errors to propagate through unconnected features in the hidden layer.
