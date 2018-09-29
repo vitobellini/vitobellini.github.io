@@ -17,3 +17,7 @@ Users, on the other hand, would like to know why a certain item has been recomme
 ### Idea
 
 If it could be possible to label every neuron in hidden layers and force the neural network to be aware of the hidden nodes meaning, we could address the problem of deep learning models interpretability. In a recommendation scenario, if we think at an autoencoder, usually we have input and output units representing items while hidden units encode a latent representation of users' ratings once the model has been trained. What if we find a way to replace a latent representation of user ratings with items' attributes and force the gradient to flow only through those attributes that belong to items?
+
+Therefore, we came up with a not fully connected architecture based on an autoencoder model, in which input and output neurons that represent all the items in the catalog are connected only with those neurons that represent items’ attributes related to them.
+
+Autoencoders are capable of encoding a latent representation of their input data within the hidden layer and they exploit it to reconstruct the original input data at the output layer. In our case, we have a not fully connected architecture that allows us to assign an explicit meaning to the hidden neurons. This means that at the end of training, we have encoded an explicit representation of the input data in the feature space.
