@@ -22,7 +22,7 @@ Therefore, we came up with a not fully connected architecture based on an autoen
 
 ![SEMAUTO](/assets/2018-09-29/semauto.png)
 
-Autoencoders are capable of encoding a latent representation of their input data within the hidden layer and they exploit it to reconstruct the original input data at the output layer. In our case, we have a not fully connected architecture that allows us to assign an explicit meaning to the hidden neurons. This means that at the end of training, we have encoded an explicit representation of the input data in the feature space.
+Autoencoders are capable of encoding a latent representation of their input data within the hidden layer and they exploit it to reconstruct the original input data at the output layer. In this case, we have a not fully connected architecture that allows us to assign an explicit meaning to the hidden neurons. This means that at the end of training, we have encoded an explicit representation of the input data in the feature space.
 
 ### Feed Forward and Backpropagation
 
@@ -47,9 +47,9 @@ a_{i,j} \in M_{m,n} =
 \end{dcases}
 $$
 
-Said that, during the feed forward and backpropagation steps, we multiply weight matrices with the mask M because we want to prevent both inputs and errors to propagate through unconnected features in the hidden layer.
+During the feed forward and backpropagation steps, we need to multiply weight matrices with the mask M because we want to prevent both inputs and errors to propagate through unconnected features in the hidden layer.
 
-Therefore we compute neurons' value for hidden and output layer as:
+Therefore it is possible to compute neurons' value for hidden and output layer as:
 
 $$
 h =  g(X \times (W_1 \circ M))
@@ -57,7 +57,9 @@ h =  g(X \times (W_1 \circ M))
 o = g(h \times (W_2 \circ M^T))
 $$
 
-Finally, training one autoencoder per user, allow us to reconstruct her user ratings starting from an explicit representation of them in terms of features instead of latent factors. We build a user profile by extracting values encoded in the hidden layer, where each neuron corresponds to an explicit feature.
+### User Profile
+
+Finally, by training one autoencoder per user, it's possible to reconstruct her user ratings starting from an explicit representation of them in terms of features instead of latent factors. Hence, the user profile can be built by by extracting values encoded in the hidden layer, where each neuron corresponds to an explicit feature.
 
 {% include mathjax.html %}
 
