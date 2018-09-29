@@ -59,7 +59,7 @@ $$
 
 ## User Profile
 
-Finally, by training one autoencoder per user, it's possible to reconstruct her user ratings starting from an explicit representation of them in terms of features instead of latent factors. Hence, the user profile can be built by by extracting values encoded in the hidden layer, where each neuron corresponds to an explicit feature.
+Finally, by training one autoencoder per user, it's possible to reconstruct her user ratings starting from an explicit representation of them in terms of features instead of latent factors. Hence, the user profile can be built by extracting values encoded in the hidden layer, where each neuron corresponds to an explicit feature.
 
 
 ## Recommendations
