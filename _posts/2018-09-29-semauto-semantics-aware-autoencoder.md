@@ -3,7 +3,7 @@ layout: post
 title:  "SEMAUTO: Semantics-Aware Autoencoder in Recommendation Scenario"
 date:   2018-09-29 13:00:00 +0200
 categories: posts
-published: false
+published: true
 ---
 
 ## Introduction
