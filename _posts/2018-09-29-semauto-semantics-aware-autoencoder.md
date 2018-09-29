@@ -28,15 +28,14 @@ Autoencoders are capable of encoding a latent representation of their input data
 
 In order to train a neural network which results to be no more fully connected, it's necessary to modify the feed forward and backpropagation algorithms because we want user ratings to propagate only through attributes that belong to rated items.
 
-\[
-M_{m,n} = 
-\begin{pmatrix}\label{eq:mask}
+$$
+M_{m,n} = \begin{pmatrix}
 a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
 %	a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
 \vdots  & \vdots  & \ddots & \vdots  \\
 a_{m,1} & a_{m,2} & \cdots & a_{m,n} 
 \end{pmatrix}
-\]
+$$
 
 M is an adjacency matrix where rows and columns represent respectively items and features. Each entry of this matrix is a binary value that indicate whether a feature 𝑗 belong to the item 𝑖.
 Said that, during the FF and BP steps, we multiply weight matrices with the mask M because we want to prevent both inputs and errors to propagate through unconnected features in the hidden layer.
