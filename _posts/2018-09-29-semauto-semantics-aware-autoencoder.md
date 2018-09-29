@@ -23,3 +23,12 @@ Therefore, we came up with a not fully connected architecture based on an autoen
 ![SEMAUTO](/assets/2018-09-29/semauto.png)
 
 Autoencoders are capable of encoding a latent representation of their input data within the hidden layer and they exploit it to reconstruct the original input data at the output layer. In our case, we have a not fully connected architecture that allows us to assign an explicit meaning to the hidden neurons. This means that at the end of training, we have encoded an explicit representation of the input data in the feature space.
+
+### Feed Forward and Backpropagation
+
+In order to train a neural network which results to be no more fully connected, it's necessary to modify the feed forward and backpropagation algorithms because we want user ratings to propagate only through attributes that belong to rated items.
+
+M is an adjacency matrix where rows and columns represent respectively items and features. Each entry of this matrix is a binary value that indicate whether a feature 𝑗 belong to the item 𝑖.
+Said that, during the FF and BP steps, we multiply weight matrices with the mask M because we want to prevent both inputs and errors to propagate through unconnected features in the hidden layer.
+
+
