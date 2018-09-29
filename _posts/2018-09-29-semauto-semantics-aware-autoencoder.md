@@ -57,5 +57,7 @@ h =  g(X \times (W_1 \circ M))
 o = g(h \times (W_2 \circ M^T))
 $$
 
+Finally, training one autoencoder per user, allow us to reconstruct her user ratings starting from an explicit representation of them in terms of features instead of latent factors. We build a user profile by extracting values encoded in the hidden layer, where each neuron corresponds to an explicit feature.
+
 {% include mathjax.html %}
 
