@@ -38,7 +38,16 @@ a_{m,1} & a_{m,2} & \cdots & a_{m,n}
 $$
 
 M is an adjacency matrix where rows and columns represent respectively items and features. Each entry of this matrix is a binary value that indicate whether a feature 𝑗 belong to the item 𝑖.
-Said that, during the FF and BP steps, we multiply weight matrices with the mask M because we want to prevent both inputs and errors to propagate through unconnected features in the hidden layer.
+
+$$
+a_{i,j} \in M_{m,n} = 
+\begin{dcases}
+1,& \text{if  item } i  \text{ is connected to feature } j\\
+0,              & \text{otherwise}
+\end{dcases}
+$$
+
+Said that, during the feed forward and backpropagation steps, we multiply weight matrices with the mask M because we want to prevent both inputs and errors to propagate through unconnected features in the hidden layer.
 
 {% include mathjax.html %}
 
