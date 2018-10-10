@@ -7,21 +7,21 @@ categories: posts
 
 ## Introduction
 
-First of all, I'll start with a definition. A recommender system is a software that exploits user's preferences to suggests items (movies, products, songs, events, etc...) to users. It helps users to find what they are looking for and it helps users to discover new interesting never seen items.
+First of all, I'll start with a definition. A recommender system is a software that exploits user's preferences to suggests items (movies, products, songs, events, etc...) to users. It helps users to find what they are looking for and it allows users to discover new interesting never seen items.
 
-Deep Learning is acquiring a great notoriety nowadays because of the leverage of huge computational power and its capacity to solve complex tasks such as image recognition, natural language processing, speech recognition, and so on.
+Deep Learning is acquiring great notoriety nowadays because of the leverage of substantial computational power and its capacity to solve complex tasks such as image recognition, natural language processing, speech recognition, and so on.
 
-It has proven to be effective also in the recommendation problem which consists in predicting an estimation function of how much a user $u$ will be interested in item $i$ for unseen items.
+It has proven to be useful also in the recommendation problem which consists in predicting an estimation function of how much a user $u$ will be interested in item $i$ for unseen items.
 
 $$ R : Users \times Items \rightarrow Ratings $$
 
 Two different approaches may be adopted to solve the recommendation problem:
 
-* Content Based
+* Content-Based
 * Collaborative Filtering
 
-The former exploits item's description to infer a rate, the latter exploits user's neighborhood so it's based on the concept that similar users give similar rate to items.
-In this tutorial we will cover the Collaborative Filtering approach.
+The former exploits items' description to infer a rate, the latter exploits users' neighborhood, so it's based on the concept that similar users give similar rate to items.
+In this post, we will cover the Collaborative Filtering approach.
 
 ## Tutorial
 
@@ -50,7 +50,7 @@ You can convert easily ratings file in a TSV (Tab-Separated Values) file with th
 $ sed -i -e 's/::/\t/g' ratings.dat
 {% endhighlight %}
 
-We have to split our dataset in training set and test set. The training set is used to train our model and the test set will be used only to evaluate the learned model. We split the dataset using the Hold-Out 80/20 protocol, so 80% of ratings for each user are kept in the training set, the remaining 20% will be moved to the test set. If you have a dataset with few ratings, the best choice for splitting protocol would be the K-Fold.
+We have to split our dataset in a training set and a test set. The training set is used to train our model, and the test set will be used only to evaluate the learned model. We split the dataset using the Hold-Out 80/20 protocol, so 80% of ratings for each user are kept in the training set, the remaining 20% will be moved to the test set. If you have a dataset with few ratings, the best choice for splitting protocol would be the K-Fold.
 
 Let's load the dataset with pandas:
 
@@ -87,7 +87,7 @@ matrix = df.pivot(index='user', columns='item', values='rating')
 matrix.fillna(0, inplace=True)
 {% endhighlight %}
 
-Rows in matrix will correspond to users and columns to items, therefore entries correspond to ratings given by users to an items.
+Rows in the matrix correspond to users and columns to items; therefore entries correspond to ratings given by users to items.
 Our matrix is still an object of DataFrame type, we need to convert it to a numpy matrix.
 
 {% highlight python %}
@@ -100,7 +100,7 @@ matrix = matrix.as_matrix()
 
 {% endhighlight %}
 
-Finally we can start to setup some network parameters, such as the dimension of each hidden layer, in this tutorial we will use 2 hidden layers.
+Finally, we can start to set up some network parameters, such as the dimension of each hidden layer, in this tutorial we will use 2 hidden layers.
 
 X is a placeholder, it just tells to TensorFlow that we have a variable X in the computational graph.
 
@@ -170,7 +170,7 @@ y_pred = decoder_op
 y_true = X
 {% endhighlight %}
 
-Once the structure of neural network has been defined, we need a loss function. A loss function quantifies how much bad is our estimate on the current example, using the current parameters W for the model. The cost function is just the average of the loss function over all the examples in the training set. Said that, we want to minimize our loss. Different optimizer can be used such as Adam, Adagrad, Adadelta and others.
+Once the structure of a neural network has been defined, we need a loss function. A loss function quantifies how much worse is our estimate on the current example, using the current parameters W for the model. The cost function is just the average of the loss function over all the samples in the training set. Said that we want to minimize our loss. A different optimizer can be used such as Adam, Adagrad, Adadelta, and others.
 
 {% highlight python %}
 # Define loss and optimizer, minimize the squared error
@@ -187,7 +187,7 @@ eval_y = tf.placeholder(tf.int32, )
 pre, pre_op = tf.metrics.precision(labels=eval_x, predictions=eval_y)
 {% endhighlight %}
 
-Because of TensorFlow uses computational graph for his operations, placeholders and variables must be initialized, at this point no more variables can be allocated.
+Because of TensorFlow uses computational graphs for his operations, placeholders and variables must be initialized, at this point, no more variables can be allocated.
 
 {% highlight python %}
 # Initialize the variables (i.e. assign their default value)
@@ -198,13 +198,13 @@ local_init = tf.local_variables_initializer()
 
 We can finally start to train our model.
 
-We split training data into batches and we feed the network with them. Using mini-batch technique is useful to speed up the training because weights are updated one time per batch. You may also think to shuffle your mini-batches to make the gradient more variable, hence it can help to converge because increases the likelihood of hitting a good direction and prevents some local minima.
+We split training data into batches, and we feed the network with them. Using mini-batch technique is useful to speed up the training because weights are updated one time per batch. You may also think to shuffle your mini-batches to make the gradient more variable; hence it can help to converge because it increases the likelihood of hitting a good direction and prevents some local minima.
 
 We train our model with vectors of user ratings, each vector represents a user and each column an item. As previously said, entries are ratings that the user gave to items. The main idea is to encode input data in a smaller space, a meaningful representation for users based on their rating, to predict unrated items.
 
 Let's back to the code, we are going to train our model for 100 epochs with a batch size of 250. This means that the entire training set will feed our neural network 100 times, every time using 250 users.
 
-At the end of training, encoder will contains a compact representation of the input data. We will then use the decoder to reconstruct the original user rating but this time we will have a score even for unrated user's items based on the learned representation for other users.
+At the end of training, the encoder will contain a compact representation of the input data. We will then use the decoder to reconstruct the original user rating, but this time we will have a score even for unrated user's items based on the learned representation for other users.
 
 {% highlight python %}
 with tf.Session() as session:
@@ -243,7 +243,7 @@ with tf.Session() as session:
     predictions['item'] = predictions['item'].map(lambda value: items[value])
 {% endhighlight %}
 
-We are ready to evaluate our model, but first user's ratings in the training set must be removed.
+We are ready to evaluate our model, but first, user's ratings in the training set must be removed.
 We keep only the top-10 ranked items for each user.
 
 {% highlight python %}
@@ -265,7 +265,7 @@ How do we evaluate a recommender system?
 
 A good predictor is not always a good recommender, that's why all prediction metrics should be avoided instead of ranking metrics from Information Retrieval field.
 
-In this tutorial we will use the Precision@10 metric, which evaluate (for each user) if an item in the predicted top-10 is contained in the top-10 items in test set.
+In this tutorial, we will use the Precision@10 metric, which evaluates (for each user) if an item in the predicted top-10 is contained in the top-10 items in the test set.
 
 Formally it is defined as:
 
@@ -273,17 +273,17 @@ $$ Precision@N = \frac{|L_{u}(N) \cap TS_{u}^{+}|}{N} $$
 
 where $L_{u}(N)$ is the recommendation list up to the N-th element and $TS_{u}^{+}$ is the set of relevant test items for $u$. Precision measures the system's ability to reject any non-relevant documents in the retrieved set.
 
-In the following plot we can see how much increase in precision we can obtain with more epochs. Be aware that training with many epochs beyond necessary would not be the best option, because you may fit well training data but you may lose generalization capacity on test test. To find the optimal number of epochs you have to use a validation set and check for each epoch the loss on the that set. When loss on validation set begin to increase, you can stop the training at that epoch.
+In the following plot, we can see how much increase in precision we can obtain with more epochs. Be aware that training with many epochs beyond necessary would not be the best option because you may fit great training data, but you may lose generalization capacity on the test set. To find the optimal number of epochs you have to use a validation set and check for each epoch the loss on that set. When loss on validation set begins to increase, you can stop the training at that epoch.
 
 ![Plot](/assets/2018-01-03/tfautorec.png)
 
-To evaluate the recommendation I suggest to use an open source library called [RankSys](https://github.com/RankSys/RankSys), written in Java, it's really fast and it implements many ranking metrics.
+To evaluate the recommendation I suggest to use an open source library called [RankSys](https://github.com/RankSys/RankSys), written in Java, it's really fast, and it implements many ranking metrics.
 
 ## Conclusion
 
 You are now able to build a recommender system with the same performances of other Collaborative Filtering algorithms such as Matrix Factorization.
 
-You can play with network settings such as hidden layers' dimension as see how system's performances change. Generally, their dimension depends on the complexity of the function you want to approximate. If your hidden layers are too big, you may experience overfitting and your model will lose the capacity to generalize well on test set. On the contrary, if they are too small, the neural network would not have enough parameters to fit well the data. You may also want to improve performances trying some regularization techniques like dropout.
+You can play with network settings such as hidden layers' dimension as see how system's performances change. Generally, their dimension depends on the complexity of the function you want to approximate. If your hidden layers are too big, you may experience overfitting and your model will lose the capacity to generalize well on the test set. On the contrary, if they are too small, the neural network would not have enough parameters to fit well the data. You may also want to improve performances trying some regularization techniques like the dropout.
 
 ## Code
 
