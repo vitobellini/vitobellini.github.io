@@ -6,6 +6,10 @@ permalink: /publications/
 
 # 2018
 
+- **Knowledge-aware Autoencoders for Explainable Recommender Systems**
+  <br>**Bellini, V.**, Schiavone, A., Di Noia, T., Ragone, A., and Di Sciascio, E.
+  <br>_Proceedings of the 3rd Workshop on Deep Learning for Recommender Systems_
+  
 - **Reflective internet of things middleware-enabled a predictive real-time waste monitoring system**
   <br>**Bellini, V.**, Di Noia, T., Mongiello, M., Nocera, F., Parchitelli, A., and Di Sciascio, E.
   <br>_ICWE 2018 - Proceedings of the 18th International Conference on Web Engineering_
@@ -18,7 +22,7 @@ permalink: /publications/
 
 - **Auto-encoding user ratings via knowledge graphs in recommendation scenarios**
   <br>**Bellini, V.**, Anelli, V.W., Di Noia, T., and Di Sciascio, E.
-  <br>_ACM International Conference Proceeding Series 2017_
+  <br>_Proceedings of the 2nd Workshop on Deep Learning for Recommender Systems_
 
 - **An analysis on time- & session-Aware diversification in recommender systems**
  <br>Anelli, V.W., **Bellini, V.**, Di Noia, T., La Bruna, W., Tomeo, P., and Di Sciascio, E.
