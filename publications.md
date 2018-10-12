@@ -6,6 +6,10 @@ permalink: /publications/
 
 # 2018
 
+- **Computing recommendations via a Knowledge Graph-aware Autoencoder**
+  <br>**Bellini, V.**, Schiavone, A., Di Noia, T., Ragone, A., and Di Sciascio, E.
+  <br>_CEUR Workshop Proceedings 2018_
+
 - **Knowledge-aware Autoencoders for Explainable Recommender Systems**
   <br>**Bellini, V.**, Schiavone, A., Di Noia, T., Ragone, A., and Di Sciascio, E.
   <br>_Proceedings of the 3rd Workshop on Deep Learning for Recommender Systems_
