@@ -4,6 +4,12 @@ title: Publications
 permalink: /publications/
 ---
 
+# 2019
+
+- **[Semantics-Aware Autoencoder](https://ieeexplore.ieee.org/document/8897546)**
+  <br>**Bellini, V.**, Di Noia, T., Di Sciascio, E., and Schiavone, A.
+  <br>IEEE Access, vol. 7
+  
 # 2018
 
 - **Computing recommendations via a Knowledge Graph-aware Autoencoder**
