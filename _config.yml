@@ -57,7 +57,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   
-google_analytics: UA-50307526-9
+google_analytics: UA-50199861-2
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
