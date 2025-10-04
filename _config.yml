@@ -51,7 +51,8 @@ minima:
     # microdotblog: jekyll
     # keybase: jekyll
 
-theme: minima
+# theme: minima
+remote_theme: ngpaladi/minimal-academic-cv
 
 plugins:
   - jekyll-feed
