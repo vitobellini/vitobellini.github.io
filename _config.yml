@@ -52,8 +52,9 @@ minima:
     # keybase: jekyll
 
 # theme: minima
-remote_theme: ngpaladi/minimal-academic-cv
-# remote_theme: byanko55/jekyll-professional-resume
+remote_theme: byanko55/jekyll-professional-resume
+name: Vito Bellini
+job: Senior Applied Scientist
 
 plugins:
   - jekyll-feed
