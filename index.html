@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vito Bellini</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar.png" alt="Vito Bellini" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Vito Bellini">Vito Bellini</h1>
+
+          <p class="title">Senior Applied Scientist</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:v.bellini@gmail.com" class="contact-link">v.bellini@gmail.com</a>
+            </div>
+
+          </li>
+
+          <!-- <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+
+              <a href="tel:+12133522795" class="contact-link">+1 (213) 352-2795</a>
+            </div>
+
+          </li> -->
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Berlin, Germany</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/vitobellini/" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://github.com/vitobellini" class="social-link">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://scholar.google.com/citations?user=khHM2nYAAAAJ&hl=en" class="social-link">
+              <ion-icon name="logo-google"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Research</button>
+          </li>
+
+          <!-- <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>  -->
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            Senior Applied Scientist at Amazon Music specializing in machine learning and recommender systems, with a strong focus on data-driven optimization, causal inference, and large-scale experimentation.
+            Passionate about bridging research and production to deliver measurable business impact through intelligent systems.
+          </p>
+        </section>
+
+
+        <!-- <section class="service">
+
+          <h3 class="h3 service-title">What i'm doing</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/people-circle-outline.svg" alt="design icon" width="40" class="filter-yellow">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Personalization</h4>
+
+                <p class="service-item-text">
+                  Machine Learning to provide personalized recommendations that adapt to each user.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/flash-outline.svg" alt="Web development icon" width="40" class="filter-yellow">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Off-Policy Evaluation</h4>
+
+                <p class="service-item-text">
+                  Using past data to predict how new policies would perform before going live.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">A/B test</h4>
+
+                <p class="service-item-text">
+                  Professional development of applications for iOS and Android.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Photography</h4>
+
+                <p class="service-item-text">
+                  I make high-quality photos of any category at a professional level.
+                </p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section> -->
+
+
+        <!--
+          - testimonials modal
+        -->
+
+        <div class="modal-container" data-modal-container>
+
+          <div class="overlay" data-overlay></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </section>
+
+        </div>
+
+      </article>
+
+
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+          <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Senior Applied Scientist III - Amazon Music</h4> 
+              <span>April 2025 — Present</span>
+              <p class="timeline-text"></p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Applied Scientist II - Amazon Music</h4>
+              <span>January 2022 — April 2025</span>
+              <p class="timeline-text"></p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Applied Scientist I - Amazon Music</h4>
+              <span>January 2020 — December 2021</span>
+              <p class="timeline-text"></p>
+
+            </li>
+
+              <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Applied Scientist Intern - Amazon Music</h4>
+              <span>April 2019 - August 2019</span>
+              <p class="timeline-text">
+              </p>
+
+            </li>
+
+            </li>
+
+              <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Teaching Assistant - Polytechnic University of Bari</h4>
+
+              <span>2016 - 2017</span>
+
+              <p class="timeline-text">
+                Lecturer for the "Algorithms and Data Structure in Java" class. - B.S. in Computer Science.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">PhD, Computer Science & Engineering - Polytechnic University of Bari</h4>
+
+              <span>2016 — 2019</span>
+
+              <p class="timeline-text">
+                During the Ph.D., I focused my research on Deep Learning applied to Recommender Systems. In particular, I investigated on Neural Networks interpretability and explainable models in recommendation scenarios.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">M.S. in Computer Science - Polytechnic University of Bari</h4>
+
+              <span>2013 — 2016</span>
+
+              <p class="timeline-text">
+                Developed a Recommender System in the movie domain.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">B.S. in Computer Science - Polytechnic University of Bari</h4>
+
+              <span>2009 — 2013</span>
+
+              <p class="timeline-text">
+
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+      </article>
+
+
+
+      <!-- PUBLICATION -->
+      <article class="research" data-page="research">
+
+        <header>
+          <h2 class="h2 article-title">Research</h2>
+        </header>
+
+       <!-- PAPERS -->
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Conferences</h3>
+          </div>
+
+          <ol class="publication-list">
+
+            <li class="publication-item" data-year="2025">
+              <h4 class="h4 publication-item-title">A Unified Recommendation Model for Features Summarization</h4>
+              <span>Vito Bellini, Zhan Shi, Huseyin Yurtseven, and Emanuele Coviello</span>
+              <p class="publication-text">
+                3rd Music Recommender Systems Workshop (MuRS 2025) co-located with the 19th ACM Conference on Recommender Systems (RecSys 2025), September 2025.
+              </p>
+            </li>
+
+            <li class="publication-item" data-year="2022">
+              <h4 class="h4 publication-item-title">Modeling position bias ranking for streaming media services</h4>
+              <span>Matteo Ruffini, Vito Bellini, Alexander Buchholz, Giuseppe Di Benedetto, and Yannik Stein</span>
+              <p class="publication-text">
+                The Web Conference 2022
+              </p>
+            </li>
+
+            <li class="publication-item" data-year="2022">
+              <h4 class="h4 publication-item-title">Fair effect attribution in parallel online experiments</h4>
+              <span>Alexander Buchholz, Vito Bellini, Giuseppe Di Benedetto, Yannik Stein, Matteo Ruffini, and Fabian Moerchen</span>
+              <p class="publication-text">
+                The Web Conference 2022
+              </p>
+            </li>
+
+            <li class="publication-item" data-year="2020">
+              <h4 class="h4 publication-item-title">Guapp: A conversational agent for job recommendation for the italian public administration</h4>
+              <span>Vito Bellini, Giovanni Maria Biancofiore, Tommaso Di Noia, Eugenio Di Sciascio, Fedelucio Narducci, and Claudio Pomo</span>
+              <p class="publication-text">
+                IEEE Conference on Evolving and Adaptive Intelligent Systems (EAIS)
+              </p>
+            </li>
+
+            <li class="publication-item" data-year="2018">
+              <h4 class="h4 publication-item-title">Knowledge-aware autoencoders for explainable recommender system</h4>
+              <span>Vito Bellini, Angelo Schiavone, Tommaso Di Noia, Azzurra Ragone, and Eugenio Di Sciascio</span>
+              <p class="publication-text">
+                Deep Learning for Recommender Systems Workshop (RecSys)
+              </p>
+            </li>
+
+            <li class="publication-item" data-year="2018">
+              <h4 class="h4 publication-item-title">Reflective internet of things middleware-enabled a predictive real-time waste monitoring system</h4>
+              <span>Vito Bellini, Tommaso Di Noia, Marina Mongiello, Francesco Nocera, Angelo Parchitelli, and Eugenio Di Sciascio</span>
+              <p class="publication-text">
+                International Conference Web Engineering (ICWE)
+              </p>
+            </li>
+
+            <li class="publication-item" data-year="2017">
+              <h4 class="h4 publication-item-title">Auto-encoding user ratings via knowledge graphs in recommendation scenarios</h4>
+              <span>Vito W Anelli, Vito Bellini, Tommaso Di Noia, Wanda La Bruna, Paolo Tomeo, and Eugenio Di Sciascio</span>
+              <p class="publication-text">
+                Deep Learning for Recommender Systems Workshop (RecSys)
+              </p>
+            </li>
+
+            <li class="publication-item" data-year="2017">
+              <h4 class="h4 publication-item-title">An analysis on time-and session-aware diversification in recommender systems</h4>
+              <span>Vito Bellini, Vito Walter Anelli, Tommaso Di Noia, and Eugenio Di Sciascio</span>
+              <p class="publication-text">
+                Conference on User Modeling, Adaptation and Personalization (UMAP)
+              </p>
+            </li>
+
+            <li class="publication-item" data-year="2017">
+              <h4 class="h4 publication-item-title">Querying deep web data sources as linked data</h4>
+              <span>Vito W Anelli, Vito Bellini, Andrea Calí, Giuseppe De Santis, Tommaso Di Noia, and Eugenio Di Sciascio</span>
+              <p class="publication-text">
+                International Conference on Web Intelligence, Mining and Semantics
+              </p>
+            </li>
+
+          </ol>
+
+        </section>
+
+         <!-- JOURNALS -->
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Journals</h3>
+          </div>
+
+          <ol class="publication-list">
+
+            <li class="publication-item" data-year="2024">
+              <h4 class="h4 publication-item-title">A qualitative analysis of knowledge graphs in recommendation scenarios through semantics-aware autoencoders</h4>
+              <span>Vito Bellini, Eugenio Di Sciascio, Francesco Maria Donini, Claudio Pomo, Azzurra Ragone, and Angelo Schiavone</span>
+              <p class="publication-text">
+                Journal of Intelligent Information Systems, pages 1–21. Springer, 2024
+              </p>
+            </li>
+
+            <li class="publication-item" data-year="2020">
+              <h4 class="h4 publication-item-title">Knowledge-aware interpretable recommender systems</h4>
+              <span>Vito Walter Anelli, Vito Bellini, Tommaso Di Noia, and Eugenio Di Sciascio</span>
+              <p class="publication-text">
+                Knowledge Graphs for eXplainable Artificial Intelligence: Foundations, Applications and Challenges, pages 101–124. IOS Press, 2020.
+              </p>
+            </li>
+
+            <li class="publication-item" data-year="2019">
+              <h4 class="h4 publication-item-title">Semantics-aware autoencoder</h4>
+              <span>Vito Bellini, Tommaso Di Noia, Eugenio Di Sciascio, and Angelo Schiavone</span>
+              <p class="publication-text">
+                IEEE Access, volume 7, pages 166122–166137. IEEE, 2019.
+              </p>
+            </li>
+
+          </ol>
+
+        </section>
+
+         <!-- PATENTS -->
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Patents</h3>
+          </div>
+
+          <ol class="publication-list">
+
+            <li class="publication-item" data-year="2023">
+              <h4 class="h4 publication-item-title">Techniques for content selection in seasonal environment</h4>
+              <span>Giuseppe Di Benedetto, Vito Bellini, and Giovanni Zappella</span>
+              <p class="publication-text">
+                US Patent 11,586,965
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+      </article>
+
+
+    </div>
+
+  </main>
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
